@@ -2,31 +2,31 @@
 
 // class Solution {
 // public:
-//     int peakIndexInMountainArray(vector<int>& arr) {
-//         int start = 0;
-//         int end = arr.size() - 1;
+//     int pivotIndex(vector<int>& nums) {
 
-//         int mid = start + ((end-start)/2);
+//         int sum = 0;
 
-//         //no need to check when start=end at the end as it will be already checked in previous iteration.
-//         while(start<end){
+//         for( int i = 0; i < nums.size(); i++){
+//             //finding sum of all elements in the array
+//             sum = sum + nums[i];
+//         }
 
-//             if( arr[mid] > arr[mid-1] && arr[mid] > arr[mid+1]){
-//                 return mid;
+//         //creating two pointers for element values
+//         int left = 0;
+//         int right = sum;
+
+//         for( int i = 0; i < nums.size(); i++){
+
+//             //trying to find pivot by decreasing right from right towards pivot and increasing left towards pivot if left==right.
+
+//             right = right - nums[i];
+
+//             if( left == right ){
+//                 return i;
 //             }
-
-//             //checking following given conditon of left side of mountain
-//             //arr[0] < arr[1] < ... arr[i-1] < arr[i]
-
-//             else if(arr[mid] < arr[mid+1]){
-//                 start = mid + 1; //bring start up as need to reach the peak from left climb
-//             }
-
 //             else{
-//                 //here the mid can be either on right decline or can be itself peak so equate end to mid only and not mid-1
-//                 end = mid ;
+//                 left = left + nums[i];
 //             }
-//             mid = start + ((end-start)/2);
 //         }
 //         return -1;
 //     }
