@@ -41,5 +41,13 @@
    2. Global Variables but it is a bad practise ass any functioon can change it and affect the code
 9. **Inline functions :** - Wherever they're called, the defination is replaced by the codeline automatically in whole prgram before compilation.
    1. When function body is of single line, inline fucntion will n=be made by compiler.
-   1. When function body is of 2-3 lines, compiler's wish to make it inline or not
-   1. When function body is of more than 3 lines, compiler will deny making inline function
+   2. When function body is of 2-3 lines, compiler's wish to make it inline or not
+   3. When function body is of more than 3 lines, compiler will deny making inline function
+10. **Recursion** - A function calling itself again in it's own body.
+    1. Mandotary things for a recursion :
+       1. Baase condition
+       2. Recursive relation
+       3. Processing(optional) - like `cout`
+    2. Types :-
+       1. Tail recursion (Base condn -> processing -> Recursive relation)
+       2. Head recursion(Base condn -> Recursive relation -> processing)
