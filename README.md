@@ -26,3 +26,20 @@
       3. `delete[] arr;` for int \*arr = new arr[];
 
 4. Static memory allocation is done by using stack and dynamic memory allocation is done by using heap.
+5. `#include<>` is pre-processor directive
+   1. Means before comilation, the code from these directives will be brought for the program execution in memory
+6. `#define` is used to create/define **macros**.
+   1. ```
+      #define PI 3.14
+      ```
+7. Macro is a piece of code that is replaced by it's value upon it's call.
+   1. Before compilation, the values of macros are replaced.
+   2. Macros cannot be change in runtime, once they're defined
+   3. [More on Macros](https://www.geeksforgeeks.org/macros-and-its-types-in-c-cpp/#:~:text=A%20macro%20is%20a%20piece,the%20definition%20of%20the%20macro.)
+8. Sharing of variables....Two ways :
+   1. Referencing variable like `void func(int &a)` - **Preferred**
+   2. Global Variables but it is a bad practise ass any functioon can change it and affect the code
+9. **Inline functions :** - Wherever they're called, the defination is replaced by the codeline automatically in whole prgram before compilation.
+   1. When function body is of single line, inline fucntion will n=be made by compiler.
+   1. When function body is of 2-3 lines, compiler's wish to make it inline or not
+   1. When function body is of more than 3 lines, compiler will deny making inline function
