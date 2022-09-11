@@ -101,7 +101,12 @@ int main()
     int n = 4;
 
     print(arr, n);
+
     mergeSort(arr, 0, n - 1);
+    // logic :
+    // 1. Split the array by recusion
+    // 2. Merge it via some logic
+
     print(arr, n);
     return 0;
 }
