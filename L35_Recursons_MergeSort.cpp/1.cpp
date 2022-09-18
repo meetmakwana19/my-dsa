@@ -15,7 +15,7 @@ void merge(int *arr, int s, int e)
     int *first = new int[len1]; // declares first as a pointer to an array of int type of length len1 to allocate dynamically.
     int *second = new int[len2];
 
-    // copy elements in the new arrays
+    // copy elements in the new arrays........K3*n TC for copying n elements
     int mainArrIndex = s;
     for (int i = 0; i < len1; i++)
     {
@@ -34,7 +34,7 @@ void merge(int *arr, int s, int e)
     mainArrIndex = s;
     int inv_count = 0;
 
-    // merge the arrs
+    // merge the arrs ............. K4*n for merging n size arrs
     while (index1 < len1 && index2 < len2)
     {
         if (first[index1] < second[index2])
@@ -60,7 +60,7 @@ void merge(int *arr, int s, int e)
         inv_count++;
     }
 
-    cout << "Invertionn count is " << inv_count << endl;
+    cout << "Invertion count is " << inv_count << endl;
     // freeing memory after using the pointers dynamically.
     delete[] first;
     delete[] second;
@@ -70,19 +70,26 @@ void mergeSort(int *arr, int s, int e)
 
     // base case
     if (s >= e) // when s>e means arr is empty and when s=e means only 1 element
+    // TC(K1) for this block
     {
         return;
     }
 
+    // TC(K2) for this line
     int mid = s + ((e - s) / 2);
 
     // sort left part
-    mergeSort(arr, s, mid);
+    mergeSort(arr, s, mid); // T(N/2) TC
 
     // sort right part
-    mergeSort(arr, mid + 1, e);
+    mergeSort(arr, mid + 1, e); // T(N/2) TC
 
     merge(arr, s, e);
+
+    // T(N) = a * NK + K
+    // So T(N) = logN * N
+    // So TC : O(nlogn)
+    // SC : O(N)
 }
 
 void print(int *arr, int n)

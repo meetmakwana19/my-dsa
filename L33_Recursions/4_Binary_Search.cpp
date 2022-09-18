@@ -16,6 +16,7 @@ bool binary_Search(int arr[], int start, int end, int key)
 
     // base condition(element not found)
     if (start > end) // while loop condition
+    // K1 TC for this block
     {
         return false;
     }
@@ -24,11 +25,13 @@ bool binary_Search(int arr[], int start, int end, int key)
 
     // 2nd base case(element found)
     if (arr[mid] == key)
+    // K2 TC for this block
     {
         return true;
     }
 
     else if (arr[mid] > key)
+    // (N/2) TC for either for these blocks
     {
         binary_Search(arr, start, mid - 1, key);
     }
@@ -36,6 +39,11 @@ bool binary_Search(int arr[], int start, int end, int key)
     {
         binary_Search(arr, mid + 1, end, key);
     }
+
+    // So TC = K1 + K2 + T(N/2)
+
+    // TC : O(logn)
+    // SC : O(logn)
 }
 int main()
 {
