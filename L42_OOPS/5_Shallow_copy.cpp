@@ -20,7 +20,14 @@ int main()
 
     cout << endl;
     alia.name[0] = 'b'; // remember name is pointer type in the class definition and changing it will mean going to that location and changing it for everyone accessing name.
+    // kalia.name[0] = 'c';
     alia.setHealth(50);
+    alia.print();
+    kalia.print();
+
+    // COPY OPERATOR ASSIGNMENT
+    kalia = alia;
+    cout << "\n After copy assignment : " << endl;
     alia.print();
     kalia.print();
 }

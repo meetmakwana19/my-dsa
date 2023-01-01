@@ -13,11 +13,15 @@ int main()
     // means Heroine() function for object `alia`
 
     Heroine *p = new Heroine();
+    // Heroine *p = new Heroine(10);
+    // Heroine *p = new Heroine(10, 'b');
 
     cout << "Hello" << endl;
 
     cout << "Address of alia is " << &alia;
 
+    // another object creation
+    // but calling parameterized constructor for this
     Heroine kiara(10);
     cout << "Address of kiara is " << &kiara;
     cout << "\nHealth of kiara is " << kiara.getHealth() << endl;
