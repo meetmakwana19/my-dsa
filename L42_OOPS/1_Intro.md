@@ -6,6 +6,7 @@
   2. Behaviour
 
 - Object usualy is a real world entity.
+- To access the members defined inside the class, we need to create the object of that class. It may be any real-world object like a mouse, keyboard, chair, table, pen, etc.
 
 - Aim of OOP is to increase
   1. Readability
@@ -28,6 +29,8 @@ And this object has behaviours of ->
 
 ### 👉🏻 Class :
 
+-A class is a logical entity that is used to define a new data type. Once we define this new data type can be used to create objects of that type. Thus we can say that a class is a template for an object. A class contains variables, methods, and constructors.
+
 - From [Class] blueprint ------instance-----> [Object] is created
 - Object is an instance of **class**.
 - User defined data type.
@@ -39,7 +42,8 @@ And this object has behaviours of ->
 
 ### Access Modifiers
 
-- Access Modifiers tells us what the scope of access of the properties of the class.
+- Access Modifiers tells us what the scope of access of the properties of the class is.
+- It allows us to determine which class members are accessible to other classes and functions and which are not.
 - To access data members/properties of a class, we use `.` operator
 - But accessing the properties using dot operator like the following can give error
 
@@ -53,9 +57,17 @@ Three Types :
 
 1. Public (whatever written below `public` keyword will be publically avaiable to everyone2)
 2. Private (By default the properties/data members inside thee class r Private )
+   - All the class members with private modifier can only be accessed by the member function inside the class.
    - can use getter/setter methods to access private members when private and public members both are defined in a class
    - getter & setter methods can be used to manipulate and read the private members
 3. Protected
+
+#### Getter and setter methods:
+
+The class’s private members are not accessible outside the class, although sometimes there is a necessity to provide access even to private members; in these cases, we need to create functions called getters and setters.
+
+1. **`Getters`** are those functions that allow us to access data members of the object. However, these functions do not change the value of data members. These are also called **`accessor functions`**.
+2. **`Setters`** are the member functions that allow us to change the data members of an object. These are also called **`mutator functions`**.
 
 ---
 
@@ -116,9 +128,13 @@ typedef struct structd_tag
 } structd_t;
 ```
 
-## Ref : https://www.geeksforgeeks.org/structure-member-alignment-padding-and-data-packing/
+Ref : https://www.geeksforgeeks.org/structure-member-alignment-padding-and-data-packing/
 
 ### Constructor
+
+- Has no return type
+- If we do not specify a constructor, the C++ compiler generates a default constructor for us (expects no parameters and has an empty body).
+- 3 types
 
 #### Default constructor
 
@@ -128,6 +144,7 @@ typedef struct structd_tag
 - It has no return type
 - It has no input parameter
 - Same name as class
+- Is public
 - Same constructor will be called whether object is created statically or dynamically
 - Once a user defined constructor is made, the system made default constructor is not impplemented but instead the user defined one is only used.
 
@@ -145,18 +162,23 @@ typedef struct structd_tag
 1. A copy constructor is built by default upon creation of the class.
 2. Once copy constructor is made by us, then the default one made by compiler is destroyed.
 
--
-
-1. Default Copy Constructor does "**Shallow copy**".
+3. Default Copy Constructor does "**Shallow copy**".
 
    1. Acessing the same memory in shallow copy with 2 diff names but same location.
 
-2. **"Deep Copy"** means making a separate copy like 'pass by value' concept.
+4. **"Deep Copy"** means making a separate copy like 'pass by value' concept.
 
 #### Copy assignment operator
 
 1. Used to equate values of 2 already defined objects
 2. Like `kalia = alia;`
+
+### Constructor overloading
+
+- means having more than one constructor with the same name as long as each has a different list of arguments.
+- Overloaded constructors essentially have the same name (name of the class) and a different number of arguments.
+- A constructor is called depending upon the number and type of arguments passed.
+- While creating the object, arguments must be passed to let the compiler know which constructor needs to be called.
 
 ---
 
@@ -166,12 +188,19 @@ typedef struct structd_tag
 2. A Destructor is created automatically when the object is created.
 3. Destructor gets called automatically for static allocation.
 4. Destructor doesnt gets called automatically for dyanmically allocated object. Need to do it manually.
+5. When you do not specify any destructor in a class, the compiler generates a default destructor and inserts it into your code.
+6. When you do not specify any destructor in a class, the compiler generates a default destructor and inserts it into your code.
+   1. the function ends
+   2. the program ends
+   3. a block containing local variables ends
+   4. a `delete` operator is called
 
-- It has no return type
+- It has no return type just like constructors
 - It has no input parameter
 - Same name as class
 - Defined using `~` symbol
 - Called only once at the time of object destuction
+- Cannot be more than one destructor for a class
 
 ### `const` keyword
 
