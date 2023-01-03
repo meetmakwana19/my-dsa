@@ -19,6 +19,9 @@
 - Inheriting properties from one class to another
 - Example, male and female can inherit properties from a human class
 - Parent/Super class and child/sub class
+- Advantages :
+  - code reusablity
+  - runtime Polymorphism can be achieved
 - C++ inheritance syntax:
 
 ```
@@ -86,6 +89,8 @@ Means private data members of parent class cannot be inherited
 2. To avoid this, we can use **`Scope resolution operator`** `::` like
 
 ```
+object.class_name::method_name();
+
 obj.A::func();
 obj.B::func();
 ```
@@ -109,9 +114,9 @@ obj.B::func();
 
 1. We know before execution that things are existing in which which forms
 2. Two Types
-   1. Function overloading - Making multiple functions with same name with help of passing different number of parameters for each overloaded function with same name.
+   1. `**Function overloading**` - Making multiple functions with same name with help of passing different number/types of parameters for each overloaded function with same name.
       1. Cannot overload functions by changing it's return type like `void func()` and `int func()` cannot be overloading in the same class
-   2. Operator overloading - Using same operator for multiple purposes.
+   2. `**Operator overloading**` - Using same operator for multiple purposes.
       1. Cannot overload these four `::`, `.*`, `.`, `?:` operators
       2. Check this https://www.codingninjas.com/codestudio/guided-paths/basics-of-c/content/118817/offering/1382250 for the list of operators which can be operated
       3. `+` is a binary operator as a + b happens with the help of 2 operands.
@@ -130,6 +135,11 @@ obj.B::func();
 ## Abstraction
 
 - Implementation hiding
-- Process of generalisation
+- Process of generalisation the features and only showing required things to the users
+- Keeping implementation details separate from other associated data
 - Abstarction and Encapsulation can go hand to hand
   - Eg : When data members are encapsulated inside a function. Using function only instead of data members can be abstraction.
+- Advantages :
+  - Only you can make changes and not any one else
+  - App gets secured
+  - Avoids duplication
