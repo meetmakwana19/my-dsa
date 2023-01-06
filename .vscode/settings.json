@@ -16,6 +16,8 @@
     "unordered_set": "cpp",
     "regex": "cpp",
     "valarray": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "new": "cpp",
+    "*.tcc": "cpp"
   }
 }
